@@ -1,6 +1,4 @@
 # Aero Flight
-![Uploading 2819f0d0-db3f-422c-8d9e-b6954b1b02d1.png…]()
-
 
 **Free focus timer. No signup.** Aero Flight turns every focus session into a flight: pick a route, tear your boarding pass, and land safely when the timer ends. It is a static Progressive Web App (plain HTML, CSS and JavaScript, no build step) that works offline once loaded.
 
