@@ -1,6 +1,6 @@
 // Aero Flight service worker: the app works fully offline after the first load.
 // Map tiles you have already seen are cached too (up to MAX_TILES). Bump VERSION whenever you change any file.
-const VERSION = 'aero-flight-v6';
+const VERSION = 'aero-flight-v8';
 const TILES = 'aero-tiles-v2';
 const MAX_TILES = 600;
 const FILES = ['./', 'index.html', 'style.css', 'app.js', 'manifest.webmanifest', 'icon.svg', 'icon-192.png', 'icon-512.png', 'icon-maskable-512.png'];

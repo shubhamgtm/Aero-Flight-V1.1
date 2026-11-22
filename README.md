@@ -1,121 +1,72 @@
-# ✈️ Aero Flight
+# Aero Flight
 
-<h3 align="center">YOUR FOCUS. YOUR FLIGHT. YOUR DESTINATION.</h3>
+**Free focus timer. No signup.** Aero Flight turns every focus session into a flight: pick a route, tear your boarding pass, and land safely when the timer ends. It is a static Progressive Web App (plain HTML, CSS and JavaScript, no build step) that works offline once loaded.
 
-<p align="center">
-  An aviation-inspired productivity experience that transforms every focus session into a journey through the skies.
-</p>
+Made by **Shubham Gautam**, a developer from Nepal.
+GitHub: [@shubhamgtm](https://github.com/shubhamgtm) · Discord: <https://discord.gg/Prr3ux4Kc2> · Email / DM: chat.shubhamgtm@gmail.com
 
-<p align="center">
-  <a href="https://getaeroflight.netlify.app/#/">
-    <img src="https://img.shields.io/badge/✈️_LIVE_DEMO-Visit_Aero_Flight-d4ff00?style=for-the-badge&labelColor=101820" />
-  </a>
-  <a href="https://github.com/shubhamgtm/Aero-Flight-V1.1">
-    <img src="https://img.shields.io/badge/SOURCE_CODE-GitHub-ffffff?style=for-the-badge&logo=github&logoColor=black" />
-  </a>
-</p>
+## Run it
 
-<p align="center">
-  <img src="https://img.shields.io/badge/STATUS-Active-9eff00?style=flat-square" />
-  <img src="https://img.shields.io/badge/PROJECT-Productivity-101820?style=flat-square" />
-  <img src="https://img.shields.io/badge/DESIGN-Aviation_Inspired-4da6ff?style=flat-square" />
-</p>
-
----
-
-## 🌤️ Overview
-
-**Aero Flight** is more than an ordinary focus timer. It creates an immersive aviation-inspired environment where users select a destination, receive a boarding pass, and begin their productivity journey.
-
-The plane moves while the focus timer runs, turning every productive minute into another step toward landing.
-
-## ✈️ Features
-
-| Feature | Description |
-|:---|:---|
-| 🛫 Flight Mode | Interactive airplane journey |
-| ⏱️ Focus Timer | Customizable focus sessions |
-| 🗺️ Destinations | Choose your focus destination |
-| 🎫 Boarding Pass | Get ready before takeoff |
-| 🎵 Music | Listen while focusing |
-| 📊 Statistics | Monitor your productivity |
-| 🏆 Leaderboard | Compare your progress |
-| ⚙️ Settings | Customize your experience |
-| 👤 Profile | Personalize your account |
-
-## 🎨 Design Philosophy
-
-- Clean and modern interface
-- Aviation-inspired visual identity
-- Sky blue and cloud-white backgrounds
-- Lime-yellow accent typography
-- Smooth and minimal interactions
-- Responsive layout
-
-## 🧭 How It Works
-
-```text
-       ✈️ AERO FLIGHT
-             |
-       Choose Destination
-             |
-       Select Focus Time
-             |
-        Get Boarding Pass
-             |
-          TAKE OFF
-             |
-       Focus & Stay Active
-             |
-           LANDING
-             |
-       Track Your Progress
-```
-
-## 🛠️ Tech Stack
-
-<p>
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-</p>
-
-## 🚀 Installation
+The service worker (offline mode) needs `http://localhost` or HTTPS, so serve the folder:
 
 ```bash
-git clone YOUR_REPOSITORY_URL
-cd aero-flight
+cd AeroFlight
+python -m http.server 8000
 ```
 
-Open `index.html` in your browser.
+Open <http://localhost:8000/>. To put it online, upload the folder to any static host with HTTPS (Netlify, GitHub Pages, Cloudflare Pages). **After changing any file, raise `VERSION` in `sw.js`** so installed copies update.
 
-## 🌍 Experience Aero Flight
+## Features
 
-<p align="center">
-  <a href="YOUR_LIVE_DEMO_URL">
-    <img src="https://img.shields.io/badge/START_YOUR_JOURNEY-TAKE_OFF-ccff00?style=for-the-badge&labelColor=101820" />
-  </a>
-</p>
+- **Works on every screen**: phones, tablets, laptops and desktops, portrait and landscape, with safe-area support for notched phones
+- **Dark and light mode**: toggle in the header, follows your device by default, remembered between visits
+- **Flights**: home airport, destination, seat type (Study / Work / Create), generated boarding pass with a tear animation
+- **Live world map**: Google Maps (with your key) or OpenStreetMap; your plane flies the real great-circle route as the timer counts down (offline fallback: a themed route map)
+- **Music**: paste a YouTube or Spotify link (playlist, album, video or track), save playlists in your browser, and keep them playing while you focus. Music keeps playing when you close the panel or move between pages
+- **Cabin ambience**: steady generated noise with its own volume
+- **Unlock system**: start with regional hops, each completed flight extends your reach by 600 km
+- **Pure Mode**: only the timer and a thin progress bar. Exit with Esc or a double-tap
+- **Flight log, share button, full screen, screen wake lock, resume after reload**
+- **Installable** on Android, iOS and desktop; works offline
+- **Pages**: Home, About, Students, Developers, Privacy (with a "delete my data" button)
+- **Creator section**: GitHub follow, Discord invite, email, featured project (QRify), and more projects (KeyRush, ZipLink)
 
-## 👨‍💻 Developer
+## Music notes
 
-**Shubham Gautam Upadhyaya**
+- YouTube: video links, `youtu.be` links and playlist links all work; they play inside a privacy-friendly `youtube-nocookie.com` player.
+- Spotify: playlist, album, track, episode and show links work. Spotify's embedded player plays full songs only if you are logged in to Spotify in the same browser; otherwise it plays 30-second previews.
+- Music needs an internet connection and is not available offline.
 
-Building creative web experiences with code and imagination.
+## Use Google Maps (optional)
 
-<p>
-  <a href="https://github.com/shubhamgtm">
-    <img src="https://img.shields.io/badge/GitHub-Follow_Me-181717?style=for-the-badge&logo=github" />
-  </a>
-  <a href="https://shubh4m.netlify.app/">
-    <img src="https://img.shields.io/badge/Portfolio-Visit-00a6d6?style=for-the-badge&logo=netlify&logoColor=white" />
-  </a>
-</p>
+Google Maps needs **your own API key** and a Google Cloud billing account (there is a free monthly allowance; check current pricing). Without a key, OpenStreetMap is used.
 
----
+1. Create a project at <https://console.cloud.google.com/> and link billing.
+2. Enable **Maps JavaScript API** and create an API key.
+3. Restrict the key (it is visible in the page source): *Websites* restriction with your site, e.g. `https://your-site.netlify.app/*` and `http://localhost:8000/*`, plus *API restriction* to Maps JavaScript API.
+4. In `app.js`, set `const GMAPS_KEY='YOUR_KEY';` and redeploy.
 
-<p align="center">
-  <b>✈️ AERO FLIGHT</b>
-  <br>
-  <i>Every minute takes you closer to your destination.</i>
-</p>
+If Google rejects the key, the app switches to OpenStreetMap by itself. OpenStreetMap's public tile server is for light use; for a very popular site use Google Maps or another provider.
+
+## Edit the creator links and projects
+
+Open `app.js` and find `LK` (GitHub, Discord, email, QRify URLs) and `PROJECTS` (name, link, one-line description for each project). Change the descriptions to say what each project does.
+
+## Files
+
+```text
+index.html              page shell, header, footer, panels
+style.css               themes (dark/light) and responsive layout
+app.js                  all app logic
+sw.js                   service worker (offline cache)
+manifest.webmanifest    PWA manifest
+icon.svg, icon-*.png    app icons
+```
+
+## Privacy
+
+No accounts, analytics, ads or tracking. Settings, flights, playlists and theme live in your browser's `localStorage` only. Location is never required. Third parties contacted: jsDelivr (map library), OpenStreetMap or Google Maps (map), and YouTube/Spotify only if you add and play a playlist. Like any website they can see your IP address.
+
+## License
+
+Add the license of your choice.

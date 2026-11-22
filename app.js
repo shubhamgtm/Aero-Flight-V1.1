@@ -158,6 +158,8 @@ function addMusic(){const url=$('#murl').value.trim(),p=parseMedia(url);if(!p)re
  D.playlists.push({name:($('#mname').value.trim()||p.label).slice(0,40),url});save();$('#murl').value='';$('#mname').value='';musicList();playMedia(p)}
 
 /* events */
+document.addEventListener('dragstart',e=>e.preventDefault());
+document.addEventListener('contextmenu',e=>{if(D.active&&!e.target.closest('input,textarea'))e.preventDefault()}); // no long-press / right-click menu during a flight
 addEventListener('keydown',e=>{if(e.key=='Escape'){pure(false);closeSheets()}});
 let lt=0;app.addEventListener('touchend',()=>{const n=Date.now();if(n-lt<300&&document.body.classList.contains('pure'))pure(false);lt=n});
 app.addEventListener('dblclick',()=>{if(document.body.classList.contains('pure'))pure(false)});
